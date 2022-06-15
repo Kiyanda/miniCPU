@@ -16,6 +16,8 @@ module ALU (
 				E = A - B;
 				cc = {!E, $signed(E)>0};
 				end
+			4'h2 : E = B - 1; //push / call
+			4'h3 : E = B + 1; //pop / ret
 			endcase
 		end
 endmodule
